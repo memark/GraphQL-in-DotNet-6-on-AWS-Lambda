@@ -1,0 +1,19 @@
+service: myservice
+
+provider:
+  name: aws
+  region: eu-west-2
+  httpApi:
+    payload: "2.0"
+  lambdaHashingVersion: 20201221
+
+functions:
+  api:
+    runtime: provided.al2
+    architecture: arm64
+    package:
+      artifact: dist/MyApi.zip
+      individually: true
+    handler: required-but-ignored
+    events:
+      - httpApi: "*"

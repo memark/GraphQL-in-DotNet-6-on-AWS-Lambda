@@ -1,0 +1,3 @@
+{
+    "msbuild-parameters": "--self-contained true --runtime linux-arm64"
+}
